@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopUI — E-Commerce</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="logo">shop<em>ui</em></div>
+    <div class="nav-right">
+      <a href="#">Women</a>
+      <a href="#">Men</a>
+      <a href="#">New In</a>
+      <button class="cart-btn" onclick="toggleCart()">
+        Cart <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Layout -->
+  <main>
+    <!-- Product Grid -->
+    <section class="products" id="products">
+      <div class="filters">
+        <button class="filter active" onclick="filterProducts('all', this)">All</button>
+        <button class="filter" onclick="filterProducts('tops', this)">Tops</button>
+        <button class="filter" onclick="filterProducts('bottoms', this)">Bottoms</button>
+        <button class="filter" onclick="filterProducts('outerwear', this)">Outerwear</button>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button onclick="toggleCart()">✕</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="cart-empty">Your cart is empty.</p>
+      </div>
+      <div class="cart-footer" id="cartFooter" style="display:none">
+        <div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div>
+        <button class="checkout-btn" onclick="checkout()">Checkout →</button>
+      </div>
+    </aside>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
